@@ -48,8 +48,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 },
             },
         };
-        let xml = quick_xml::se::to_string(&message).unwrap();
-        println!("{}", xml);
+        println!("{}", message.to_xml());
     }
 
     return Ok(());

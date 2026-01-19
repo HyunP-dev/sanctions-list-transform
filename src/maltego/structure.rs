@@ -43,3 +43,9 @@ pub struct MaltegoMessage {
     #[serde(rename = "MaltegoTransformResponseMessage")]
     pub response: MaltegoTransformResponseMessage,
 }
+
+impl MaltegoMessage {
+    pub fn to_xml(&self) -> String {
+        quick_xml::se::to_string(self).unwrap()
+    }
+}
